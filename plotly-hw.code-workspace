@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../UCB-BER-DATA-PT-02-2020-U-C/01-Lesson-Plans/15-Interactive-Visualizations-and-Dashboards"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "plotly-challenge"
+	}
+}
