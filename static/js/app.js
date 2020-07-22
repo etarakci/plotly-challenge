@@ -1,24 +1,20 @@
 function createDropdown() {
   d3.json("data/samples.json").then(response => {
+    var selector = d3.select("select");
     var dropdownData = response.names;
     console.log(dropdownData);
 
     // DROPDOWN MENU
     dropdownData.forEach(id => {
       console.log(id);
-      var selector = d3.select("select")
-      .selectAll("option")
-      .data(id)
-      .enter().append("option")
+      
+      
+      selector.append("option")
       .text(id)
       .attr("value", id);
     });
   });
 };
-createDropdown();
-
-
-
 
 function buildPlots(sampleID) {
   d3.json("data/samples.json").then(response => {
@@ -79,15 +75,9 @@ function buildPlots(sampleID) {
   });
 };
 
-buildPlots("940");
-
-
-
-
 
 // Call updatePlotly() when a change takes place to the DOM
 d3.selectAll("#selDataset").on("change", updatePlotly);
-
 
 function updatePlotly() {
   // Use D3 to select the dropdown menu
@@ -96,3 +86,11 @@ function updatePlotly() {
   var subject = dropdownMenu.property("value");
   buildPlots(subject);
 };
+
+
+function init() {
+  createDropdown();
+  buildPlots("940");
+};
+
+init();
